@@ -31,7 +31,7 @@
         $apellido = $_POST['apellido'];
         $email = $_POST['email'];
 
-        $insertar = "INSERT INTO usuarios (nombre, apellido, email) VALUES ('$usuario','$apellido','$email')";
+        $insertar = "INSERT INTO usuarios (nombre, apellido, email) VALUES ('$nombre','$apellido','$email')";
 
         $ejecutar = mysqli_query($con, $insertar);
 
