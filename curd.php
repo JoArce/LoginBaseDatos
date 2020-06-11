@@ -27,7 +27,7 @@
 <?php
     if(isset($_POST['insert'])){
 
-        $usuario = $_POST['nombre'];
+        $nombre = $_POST['nombre'];
         $apellido = $_POST['apellido'];
         $email = $_POST['email'];
 
@@ -44,9 +44,40 @@
 ?>
 <br>
 <table width="500" border = "2" style = "background-color: #F9F9F9;">
-    <th></th>
-    <th></th>
-    <th></th>
+   <tr>
+    <th>Id</th>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Email</th>
+</tr>
+    <?php
+        $consulta = "SELECT * FROM usuarios";
+
+        $ejecutar = mysqli_query($con, $consulta);
+
+        $i = 0;
+
+        while($fila = mysqli_fetch_array($ejecutar)){
+            $id = $fila['id'];
+            $nombre = $fila['nombre'];
+            $apellido = $fila['apellido'];
+            $email= $fila['email'];
+
+            $i++;
+        
+    ?>
+
+        <tr>
+              <td><?php echo $id; ?></td>
+              <td><?php echo $nombre; ?></td>
+              <td><?php echo $apellido; ?></td>
+              <td><?php echo $email; ?></td>
+              <td><a href="curd.php?editar= <?php echo $id;?>">Editar</a></td>
+              <td><a href="curd.php?eliminar= <?php echo $id;?>">Eliminar</a></td>
+              
+        </tr>
+        <?php }?>
+
 
 </table>
 
