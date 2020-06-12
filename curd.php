@@ -81,5 +81,11 @@
 
 </table>
 
+<?php
+    if(isset($_GET['editar'])){
+         include("editar.php");
+    }
+?>
+
 </body>
 </html>
