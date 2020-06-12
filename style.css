@@ -1,0 +1,45 @@
+table
+{
+border: 2px solid #353A46;
+background-color: #0575E6;  /* fallback for old browsers */
+background-color: -webkit-linear-gradient(to right, #021B79, #0575E6);  /* Chrome 10-25, Safari 5.1-6 */
+background-color: linear-gradient(to right, #021B79, #0575E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+input[type = text], input[type = password]
+{
+    width: 100%;
+    padding: 8px 20px;
+    border: 2px solid #ccc;
+    box-sizing: border-box;
+    
+
+}
+
+img 
+{
+    width: 150px;
+    height: 150px;
+}
+
+label
+{
+    font-size: 22px;
+    font-weight: bold ;
+    font-family: arial;
+    color: white;
+}
+
+
+input [type = submit]
+{
+    background-color: #1C94C8;
+    color: white;
+    padding: 8px 10px;
+    margin: 8px 0px;
+    border: solid;
+    cursor: pointer;
+    width: 40%;
+
+}
