@@ -87,5 +87,18 @@
     }
 ?>
 
+<?php
+    if(isset($_GET['eliminar'])){
+         $eliminar_id = $_GET['eliminar'];
+
+         $eliminar = " DELETE FROM usuarios WHERE id = '$eliminar_id' ";
+         $ejecutar = mysqli_query($con, $eliminar);
+         
+         if($ejecutar){
+            echo "<script> alert('Usuario eliminado')</script>";
+            echo "<script> window.open('curd.php', '_self')</script>";
+         }
+    }
+?>
 </body>
 </html>
