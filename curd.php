@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <meta charset= "UTF-8">
+<LINK REL=StyleSheet HREF="style2.css" TYPE="text/css" MEDIA=screen>
+
+<div id = "menu">
+    <ul>
+        <li>Home</li>
+        <li class = "cerrar-sesion">
+            <a href="logout.php">Cerrar Sesión</a>
+        </li>
+    </ul>
+</div>
+
+<section>
+    <h1>Bienvenidos</h1>
+</section>
 <?php
+
     $con = mysqli_connect("localhost", "root", "", "crud") or die ("Error");
 
 ?>
@@ -13,6 +28,7 @@
 </head>
 
 <body>
+    <center>
     <form method = "post" action = "curd.php">
     <label> Nombre</label><br>
     <input type="text" name="nombre" placeholder = "Escriba nombre del usuario"/> <br>
@@ -22,6 +38,7 @@
     <input type="text" name="email" placeholder = "Escriba email del usuario"/> <br>
     <input type ="submit" name = "insert"  value = "Ingresar Datos"/> <br>
     </form>
+    </center>
 
 
 <?php
@@ -43,7 +60,8 @@
     }
 ?>
 <br>
-<table width="500" border = "2" style = "background-color: #F9F9F9;">
+<center>
+<table width="500" border = "2">
    <tr>
     <th>Id</th>
     <th>Nombre</th>
@@ -72,14 +90,15 @@
               <td><?php echo $nombre; ?></td>
               <td><?php echo $apellido; ?></td>
               <td><?php echo $email; ?></td>
-              <td><a href="curd.php?editar= <?php echo $id;?>">Editar</a></td>
-              <td><a href="curd.php?eliminar= <?php echo $id;?>">Eliminar</a></td>
+              <td><a href="curd.php?editar= <?php echo $id;?>"><input type = "submit" value = "Editar"></a></input></td>
+              <td><a href="curd.php?eliminar= <?php echo $id;?>"><input type= "submit" value = "Eliminar" ></a></td>
               
         </tr>
         <?php }?>
 
 
 </table>
+        </center>
 
 <?php
     if(isset($_GET['editar'])){
